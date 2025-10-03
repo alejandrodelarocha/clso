@@ -1,4 +1,4 @@
-# CLSO Ingeniería Eléctrica - React Application B
+# CLSO Ingeniería Eléctrica - React Application Landing Page
 
 By [http://AlejandroDeLaRocha.com](http://AlejandroDeLaRocha.com)
 
