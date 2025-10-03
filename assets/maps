@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, #mapDiv {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapDiv"></div>
+      
+    <script nonce="yj4Zu7xPJ98bn0xtq3vktA">
+      function onEmbedLoad() {
+        initEmbed([null,null,null,null,null,[[[2,"spotlit",null,null,null,null,null,[null,null,null,null,null,null,null,null,null,null,11,null,[null,null,null,null,null,null,null,null,null,null,null,null,null,1]]]],null,null,[[null,null,null,null,null,null,null,null,null,null,null,null,null,[[["9721656627014797411","14400450847452203266"],"/g/11hctt0z93",null,[286369242,3233977994],null,null,null,1,null,null,null,null,null,null,"gcid:compound_building"],0,null,null,null,0,null,0]]]],null,["en_US"],[null,null,null,"/maps/api/js/ApplicationService.GetEntityDetails","/maps/embed/upgrade204",null,"/maps/embed/record204"],null,null,null,null,null,null,null,null,"I3DcaNSXNNGnkPIPms2gWA",null,null,null,[[[3501.760901386559,-106.0989302,28.6369242],[0,0,0],null,13.10000038146973],15,null,[["0x86ea4331d98a0863:0xc7d8adbfb7dc8902","Virginia 2044, Las Águilas, Campestre-Lomas, 31214 Chihuahua, Chih.",[28.6369242,-106.0989302]],"Virginia 2044",["Las Águilas, Campestre-Lomas","31214 Chihuahua, Chih."],null,null,null,null,null,null,null,null,null,"Building","Virginia 2044, Las Águilas, Campestre-Lomas, 31214 Chihuahua, Chih.",null,null,null,null,null,null,null,null,null,1,1,null,null,"ChIJYwiK2TFD6oYRAonct7-t2Mc",null,null,"0ahUKEwiUtfzw2YGQAxXRE0QIHZomCAsQ8BcIAygA"]],null,null,null,0,null,null,null,null,null,null,[1]]);
+      }
+      function onApiLoad() {
+        var embed = document.createElement('script');
+        embed.src = "https://maps.gstatic.com/maps-api-v3/embed/js/62/7e/init_embed.js";
+        document.body.appendChild(embed);
+      }
+    </script>
+    <link rel="preload" href="https://maps.gstatic.com/maps-api-v3/embed/js/62/7e/init_embed.js" nonce="yj4Zu7xPJ98bn0xtq3vktA" as="script" />
+    <script src="https://maps.googleapis.com/maps/api/js?client=google-maps-embed&amp;paint_origin=&amp;libraries=geometry,search&amp;v=weekly&amp;loading=async&amp;language=en_US&amp;callback=onApiLoad" nonce="yj4Zu7xPJ98bn0xtq3vktA" async defer></script>
+  </body>
+</html>

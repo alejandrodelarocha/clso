@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CLSO Ingeniería Eléctrica | Diseño y Construcción Eléctrica</title>
+    <meta
+      name="description"
+      content="CLSO Ingeniería Eléctrica ofrece servicios de diseño, construcción y mantenimiento de sistemas eléctricos en baja y media tensión, con compromiso en calidad y sostenibilidad."
+    />
+    <meta name="author" content="CLSO Ingeniería Eléctrica" />
+    <meta
+      name="keywords"
+      content="ingeniería eléctrica, baja tensión, media tensión, sistemas solares, mantenimiento eléctrico, Chihuahua, México"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <meta
+      property="og:title"
+      content="CLSO Ingeniería Eléctrica | Diseño y Construcción Eléctrica"
+    />
+    <meta
+      property="og:description"
+      content="Soluciones integrales de diseño, construcción y mantenimiento eléctrico en baja y media tensión."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="assets/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+    <meta name="theme-color" content="#499f92" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/glidejs/3.6.0/css/glide.core.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/glidejs/3.6.0/css/glide.theme.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/gallery-clean.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Electrical Animation Styles */
+      #intro {
+        position: relative;
+        min-height: 100vh;
+        /* DARKER, MORE DRAMATIC GRADIENT */
+        background: linear-gradient(135deg, #0f2420, #1a3a35, #0f2420);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .electrical-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100vw;
+        height: 100%;
+        overflow: hidden; /* KEEP THIS! It prevents the X-scroll issue */
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* New: Full-screen noise overlay */
+      .electrical-animation::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Subtle blue/white glitch color */
+        background-color: rgba(0, 234, 255, 0.05);
+        z-index: 10;
+        /* Apply a rapid, randomized flicker animation */
+        animation: staticFlicker 0.1s infinite alternate;
+      }
+
+      html,
+      body {
+        /* Hides any content that goes beyond the horizontal boundaries */
+        overflow-x: hidden !important;
+        /* The !important may be needed if a library like Bootstrap is overriding it */
+      }
+
+      /* Navbar Scrolling Fixes */
+      /* Enhance Menu Text Contrast and Size */
+      .navbar-nav .nav-link {
+        font-size: 1.05rem; /* Slightly larger text */
+        font-weight: 600; /* More contrast */
+        padding-left: 1rem !important; /* Ensure good spacing */
+        padding-right: 1rem !important;
+      }
+
+      /* Logo Visibility Fix: Change logo source when navbar is fixed (Requires JS/HTML update) */
+      #logo-img.scrolled {
+        width: 80px;
+        transition: width 0.3s;
+      }
+
+      .electrical-spark {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: #ffffff;
+        border-radius: 50%;
+        box-shadow: 0 0 15px #fff, 0 0 35px #00eaff, 0 0 50px #00aaff;
+        animation: staticFlicker 3s infinite cubic-bezier(0.8, 0.2, 0.2, 0.8);
+      }
+
+      @keyframes staticFlicker {
+        0% {
+          opacity: 0.15;
+          transform: translate(1px, 1px);
+        }
+        25% {
+          opacity: 0.25;
+          transform: translate(-1px, 0);
+        }
+        50% {
+          opacity: 0.1;
+          transform: translate(0, 1px);
+        }
+        75% {
+          opacity: 0.3;
+          transform: translate(1px, -1px);
+        }
+        100% {
+          opacity: 0.2;
+          transform: translate(-1px, 1px);
+        }
+      }
+
+      .intro-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      @keyframes staticFlicker {
+        0% {
+          opacity: 0.15;
+          transform: translate(1px, 1px);
+        }
+        25% {
+          opacity: 0.25;
+          transform: translate(-1px, 0);
+        }
+        50% {
+          opacity: 0.1;
+          transform: translate(0, 1px);
+        }
+        75% {
+          opacity: 0.3;
+          transform: translate(1px, -1px);
+        }
+        100% {
+          opacity: 0.2;
+          transform: translate(-1px, 1px);
+        }
+      }
+      /* 2. SPARK MOVEMENT KEYFRAMES */
+      @keyframes spark {
+        0% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.9;
+        }
+        25% {
+          transform: translate(30vw, -15vh) scale(0.8);
+          opacity: 0.5;
+        }
+        50% {
+          transform: translate(-10vw, 40vh) scale(1.1);
+          opacity: 0.8;
+        }
+        75% {
+          transform: translate(-40vw, -5vh) scale(0.7);
+          opacity: 0.3;
+        }
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.9;
+        }
+      }
+
+      /* --- GLIDE.JS FIXES (Slider) --- */
+      .glide {
+        position: relative;
+      }
+      .glide__track {
+        overflow: hidden;
+      }
+      .glide__slides {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .glide__slide {
+        flex-shrink: 0;
+        width: 100%;
+        user-select: none;
+      }
+
+      .glide__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        background-color: #499f92;
+        border: none;
+        color: white;
+        opacity: 0.8;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        width: 35px;
+        height: 35px;
+        transition: background-color 0.3s, opacity 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .glide__arrow:hover {
+        background-color: #2c6e5e;
+        opacity: 1;
+      }
+      .glide__arrow--left {
+        left: 10px;
+      }
+      .glide__arrow--right {
+        right: 10px;
+      }
+
+      /* --- NUESTROS SERVICIOS CARD ENHANCEMENTS --- */
+      .service-card {
+        border-radius: 1rem !important;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        background-color: #f8f9fa !important;
+        color: #000000 !important;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0, 234, 255, 0.3),
+          0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar {
+        display: block !important;
+      }
+
+      .service-icon {
+        color: #0c7868;
+        transition: color 0.3s ease;
+      }
+
+      .service-card:hover .service-icon {
+        color: #37b8a5;
+      }
+
+      .service-title {
+        color: #1a3a35;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+      }
+
+      #services {
+        background-color: #f8f9fa !important;
+      }
+
+      .card-body {
+        color: #000000 !important;
+      }
+
+      /* --- PORTFOLIO CARD STYLES --- */
+      .portfolio-card {
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+        border-radius: 0.5rem;
+        cursor: pointer;
+      }
+      .portfolio-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+        filter: brightness(0.7);
+      }
+      .portfolio-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        color: white;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.8),
+          rgba(0, 0, 0, 0.2)
+        );
+        transition: background 0.5s ease;
+      }
+      .portfolio-title {
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        font-size: 1.5rem;
+        color: #fff !important; /* Ensure title is white over dark overlay */
+      }
+      .portfolio-description {
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
+      .portfolio-card:hover .portfolio-image {
+        transform: scale(1.05);
+        filter: brightness(0.5);
+      }
+      .portfolio-card:hover .portfolio-overlay {
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0.3)
+        );
+      }
+
+      /* --- General Text/Color Overrides (Cleanup) --- */
+      /* Ensure links/buttons in dark sections are visible */
+      #contact a {
+        color: #ffffff !important;
+      }
+      #contact .contact-item i {
+        color: #499f92 !important;
+      }
+      .btn-outline-light {
+        color: #f8f9fa !important;
+        border-color: #f8f9fa !important;
+      }
+      .btn-outline-light:hover {
+        background-color: #f8f9fa !important;
+        color: #1a3a35 !important;
+      }
+
+      #services p,
+      h3 {
+        color: #000000 !important;
+      }
+
+      
+    </style>
+
+    <link rel="preload" href="assets/img/logo.png" as="image" />
+    <link rel="preload" href="assets/css/style.css" as="style" />
+  </head>
+  <body >
+
+    <nav
+      class="navbar navbar-expand-lg navbar-dark fixed-top display-block"
+      style="background-color: #499f92"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#page-top" id="logo-link">
+          <img
+            src="assets/img/logo.png"
+            alt="CLSO Ingeniería Eléctrica"
+            style="filter: brightness(0) invert(1)"
+            width="100"
+            id="logo-img"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link page-scroll"
+                href="#about"
+                data-string="nav_about"
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link page-scroll"
+                href="#services"
+                data-string="nav_services"
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link page-scroll"
+                href="#team"
+                data-string="nav_portfolio"
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link page-scroll"
+                href="#contact"
+                data-string="nav_contact"
+              ></a>
+            </li>
+            <li class="nav-item">
+              <img
+                onclick="applyStrings(spanish)"
+                style="cursor: pointer; margin-right: 10px; margin-top: 12px"
+                src="assets/img/mx.svg"
+                alt="Español"
+                width="20"
+              />
+            </li>
+            <li class="nav-item">
+              <img
+                onclick="applyStrings(english)"
+                style="cursor: pointer; margin-top: 12px"
+                src="assets/img/us.svg"
+                alt="English"
+                width="20"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header id="intro" class="d-flex align-items-center electrical-animation">
+      <div class="container text-center text-white intro-content">
+        <img
+          src="assets/img/logo.png"
+          alt="CLSO Ingeniería Eléctrica"
+          width="300"
+          class="img-fluid mb-4"
+        />
+        <h1 class="display-4 fw-bold" data-string="header_title"></h1>
+        <p class="lead" data-string="header_subtitle"></p>
+        <a
+          href="#about"
+          class="btn btn-light btn-lg page-scroll mt-3 shadow-lg"
+          style="color: black !important"
+          data-string="header_cta"
+        ></a>
+      </div>
+    </header>
+
+    <section id="about" class="py-5">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2
+            class="section-title"
+            style="color: #499f92"
+            data-string="about_title"
+          ></h2>
+          <hr class="w-25 mx-auto border-3" style="color: #499f92" />
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="container3d fixed inset-0 flex items-center justify-center" id="spinner">
+                <div class="logo3d">
+                    <div class="arc arc-outer"></div>
+                    <div class="arc arc-yellow"></div>
+                    <div class="arc arc-teal"></div>
+                    <div class="center-circle"></div>
+                </div>
+            </div>
+    <style>/* --- Core Electrical Animation Container --- */
+        .electrical-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 100vw;
+            height: 100%;
+            overflow: hidden; /* CRITICAL: Prevents X-scroll */
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* 1. FLICKER/STATIC OVERLAY (Subtle Noise) */
+        .electrical-animation::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Subtle blue/white glitch color */
+            background-color: rgba(0, 234, 255, 0.05);
+            z-index: 10;
+            /* Apply the rapid, randomized flicker animation */
+            animation: staticFlicker 0.1s infinite alternate;
+        }
+        
+        /* 2. SPARK DEFINITION (The small, moving lights) */
+        .electrical-spark {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffffff;
+            border-radius: 50%;
+            /* Strong glow effect */
+            box-shadow: 0 0 15px #fff, 0 0 35px #00eaff, 0 0 50px #00aaff;
+            /* Apply the movement animation */
+            animation: spark 3s infinite cubic-bezier(0.8, 0.2, 0.2, 0.8);
+        }
+        
+        /* --- Animation Keyframes (MUST BE PRESENT) --- */
+        
+        /* Keyframes for the full-screen noise flicker */
+        @keyframes staticFlicker {
+            0% {
+                opacity: 0.15;
+                transform: translate(1px, 1px);
+            }
+            25% {
+                opacity: 0.25;
+                transform: translate(-1px, 0);
+            }
+            50% {
+                opacity: 0.1;
+                transform: translate(0, 1px);
+            }
+            75% {
+                opacity: 0.3;
+                transform: translate(1px, -1px);
+            }
+            100% {
+                opacity: 0.2;
+                transform: translate(-1px, 1px);
+            }
+        }
+        
+        /* Global scroll fix */
+        html, body {
+            overflow-x: hidden !important;
+        }
+        
+                .wrapper3d {
+                    width: 400px;
+                    height: 300px;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border-radius: 15px;
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    perspective: 1000px;
+                    position: relative;
+                    overflow: hidden;
+                }
+        
+                .container3d {
+                    width: 250px;
+                    height: 250px;
+                    position: relative;
+                    transform-style: preserve-3d;
+                    animation: spin 8s linear infinite;
+                }
+        
+                .logo3d {
+                    width: 250px;
+                    height: 250px;
+                    position: absolute;
+                    transform-style: preserve-3d;
+                }
+        
+                .arc {
+                    position: absolute;
+                    border-radius: 50%;
+                    transform-style: preserve-3d;
+                }
+        
+                /* Light blue outer arc */
+                .arc-outer {
+                    width: 230px;
+                    height: 230px;
+                    top: 10px;
+                    left: 10px;
+                    border: 25px solid transparent;
+                    border-top-color: rgba(173, 216, 230, 0.7);
+                    border-right-color: rgba(173, 216, 230, 0.7);
+                    animation: spinOuter 8s ease-in-out infinite;
+                }
+        
+                /* Yellow arc */
+                .arc-yellow {
+                    width: 180px;
+                    height: 180px;
+                    top: 35px;
+                    left: 35px;
+                    border: 20px solid transparent;
+                    border-top-color: rgba(255, 215, 77, 0.9);
+                    border-left-color: rgba(255, 215, 77, 0.9);
+                    animation: spinYellow 8s ease-in-out infinite;
+                }
+        
+                /* Teal/green arc */
+                .arc-teal {
+                    width: 130px;
+                    height: 130px;
+                    top: 60px;
+                    left: 60px;
+                    border: 18px solid transparent;
+                    border-top-color: rgba(72, 149, 142, 0.9);
+                    border-left-color: rgba(72, 149, 142, 0.9);
+                    border-bottom-color: rgba(72, 149, 142, 0.9);
+                    animation: spinTeal 8s ease-in-out infinite;
+                }
+        
+                /* Center red circle */
+                .center-circle {
+                    width: 60px;
+                    height: 60px;
+                    background-color: rgba(178, 34, 52, 0.95);
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 95px;
+                    left: 95px;
+                    transform: translateZ(20px);
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                    animation: spinCenter 8s ease-in-out infinite;
+                }
+        
+                @keyframes spin {
+                    0% {
+                        transform: rotateY(0deg) rotateX(10deg);
+                    }
+                    100% {
+                        transform: rotateY(360deg) rotateX(10deg);
+                    }
+                }
+        
+                @keyframes spinOuter {
+                    0%, 100% {
+                        transform: rotateZ(45deg) rotateY(0deg);
+                    }
+                    50% {
+                        transform: rotateZ(45deg) rotateY(360deg);
+                    }
+                }
+        
+                @keyframes spinYellow {
+                    0%, 100% {
+                        transform: rotateZ(-45deg) rotateX(0deg);
+                    }
+                    50% {
+                        transform: rotateZ(-45deg) rotateX(360deg);
+                    }
+                }
+        
+                @keyframes spinTeal {
+                    0%, 100% {
+                        transform: rotateZ(135deg) rotateY(0deg) rotateX(0deg);
+                    }
+                    50% {
+                        transform: rotateZ(135deg) rotateY(360deg) rotateX(360deg);
+                    }
+                }
+        
+                @keyframes spinCenter {
+                    0%, 100% {
+                        transform: translateZ(20px) rotateY(0deg);
+                    }
+                    50% {
+                        transform: translateZ(20px) rotateY(360deg);
+                    }
+                }
+        
+                /* Controls */
+                .controls {
+                    position: absolute;
+                    bottom: 15px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+                    gap: 10px;
+                    background: rgba(255, 255, 255, 0.15);
+                    padding: 10px 15px;
+                    border-radius: 25px;
+                    backdrop-filter: blur(10px);
+                }
+        
+                button {
+                    background: rgba(255, 255, 255, 0.9);
+                    border: none;
+                    padding: 8px 16px;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: 12px;
+                    color: #667eea;
+                    transition: all 0.3s;
+                }
+        
+                button:hover {
+                    background: white;
+                    transform: scale(1.05);
+                }
+        
+                .paused {
+                    animation-play-state: paused !important;
+                }
+            </style>
+        </head>
+        <body>
+            <script>
+                let isPaused = false;
+                let currentSpeed = 8;
+                const spinner = document.getElementById('spinner');
+        
+                function toggleSpin() {
+                    isPaused = !isPaused;
+                    spinner.classList.toggle('paused');
+                }
+        
+                function changeSpeed() {
+                    const speeds = [8, 4, 12, 2];
+                    const currentIndex = speeds.indexOf(currentSpeed);
+                    currentSpeed = speeds[(currentIndex + 1) % speeds.length];
+                    spinner.style.animation = `spin ${currentSpeed}s linear infinite`;
+                }
+                document.addEventListener("DOMContentLoaded", function() {
+                    document.querySelector("#intro").addEventListener("mousedown", function () {
+                      alert()
+                        document.querySelector("#about").scrollIntoView({
+                            offset: {
+                              top: 50,
+                            },
+                            behavior: "smooth",
+                          });
+                    });
+                });
+            </script>
+          </div>
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h4
+              class="fw-bold"
+              style="color: #499f92"
+              data-string="about_clso_title"
+            ></h4>
+            <p data-string="about_clso_text"></p>
+            <h4
+              class="fw-bold"
+              style="color: #499f92"
+              data-string="about_mission_title"
+            ></h4>
+            <p data-string="about_mission_text"></p>
+          </div>
+          <div class="col-md-4">
+            <h4
+              class="fw-bold"
+              style="color: #499f92"
+              data-string="about_vision_title"
+            ></h4>
+            <p data-string="about_vision_text"></p>
+            <h4
+              class="fw-bold"
+              style="color: #499f92"
+              data-string="about_values_title"
+            ></h4>
+            <ul class="list-unstyled">
+              <li>
+                <i class="fas fa-check-circle me-2 text-success"></i
+                ><span data-string="value_proactivity"></span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle me-2 text-success"></i
+                ><span data-string="value_responsibility"></span>
+              </li>
+              <li>
+                <i class="fas fa-check-circle me-2 text-success"></i
+                ><span data-string="value_productivity"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+<a id="services"></a>
+    <section  class="py-5 bg-light">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="section-title" data-string="services_title"></h2>
+          <hr class="w-25 mx-auto border-3" />
+        </div>
+        <div
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center"
+        >
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 service-card">
+              <div class="card-body text-center">
+                <i class="fas fa-plug fa-3x mb-3 service-icon"></i>
+                <h3
+                  class="h5 service-title"
+                  data-string="service_bt_title"
+                ></h3>
+                <p class="card-text small" data-string="service_bt_text"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 service-card">
+              <div class="card-body text-center">
+                <i class="fas fa-bolt fa-3x mb-3 service-icon"></i>
+                <h3
+                  class="h5 service-title"
+                  data-string="service_mt_title"
+                ></h3>
+                <p class="card-text small" data-string="service_mt_text"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 service-card">
+              <div class="card-body text-center">
+                <i class="fas fa-wrench fa-3x mb-3 service-icon"></i>
+                <h3
+                  class="h5 service-title"
+                  data-string="service_maint_title"
+                ></h3>
+                <p class="card-text small" data-string="service_maint_text"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 service-card">
+              <div class="card-body text-center">
+                <i class="fas fa-book fa-3x mb-3 service-icon"></i>
+                <h3
+                  class="h5 service-title"
+                  data-string="service_training_title"
+                ></h3>
+                <p
+                  class="card-text small"
+                  data-string="service_training_text"
+                ></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0 service-card">
+              <div class="card-body text-center">
+                <i class="fas fa-edit fa-3x mb-3 service-icon"></i>
+                <h3
+                  class="h5 service-title"
+                  data-string="service_procedures_title"
+                ></h3>
+                <p
+                  class="card-text small"
+                  data-string="service_procedures_text"
+                ></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="py-10">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2
+            class="section-title"
+            style="color: #499f92"
+            data-string="portfolio_title"
+          ></h2>
+          <hr class="w-25 mx-auto border-3" style="color: #499f92" />
+        </div>
+
+        <div class="glide">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide">
+                <div class="portfolio-card shadow-lg">
+                  <img
+                    src="assets/img/portfolio/01.jpg"
+                    alt="Instalación Industrial"
+                    class="portfolio-image"
+                  />
+                  <div class="portfolio-overlay">
+                    <h4
+                      class="portfolio-title"
+                      data-string="port_01_title"
+                    ></h4>
+                    <p
+                      class="portfolio-description"
+                      data-string="port_01_desc"
+                    ></p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="glide__slide">
+                <div class="portfolio-card shadow-lg">
+                  <img
+                    src="assets/img/portfolio/02.jpg"
+                    alt="Subestación de Media Tensión"
+                    class="portfolio-image"
+                  />
+                  <div class="portfolio-overlay">
+                    <h4
+                      class="portfolio-title"
+                      data-string="port_02_title"
+                    ></h4>
+                    <p
+                      class="portfolio-description"
+                      data-string="port_02_desc"
+                    ></p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="glide__slide">
+                <div class="portfolio-card shadow-lg">
+                  <img
+                    src="assets/img/portfolio/03.jpg"
+                    alt="Sistemas Solares Fotovoltaicos"
+                    class="portfolio-image"
+                  />
+                  <div class="portfolio-overlay">
+                    <h4
+                      class="portfolio-title"
+                      data-string="port_03_title"
+                    ></h4>
+                    <p
+                      class="portfolio-description"
+                      data-string="port_03_desc"
+                    ></p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="glide__slide">
+                <div class="portfolio-card shadow-lg">
+                  <img
+                    src="assets/img/portfolio/04.jpg"
+                    alt="Mantenimiento de Tableros Eléctricos"
+                    class="portfolio-image"
+                  />
+                  <div class="portfolio-overlay">
+                    <h4
+                      class="portfolio-title"
+                      data-string="port_04_title"
+                    ></h4>
+                    <p
+                      class="portfolio-description"
+                      data-string="port_04_desc"
+                    ></p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="glide__slide">
+                <div class="portfolio-card shadow-lg">
+                  <img
+                    src="assets/img/portfolio/05.jpg"
+                    alt="Diseño de Instalaciones"
+                    class="portfolio-image"
+                  />
+                  <div class="portfolio-overlay">
+                    <h4
+                      class="portfolio-title"
+                      data-string="port_05_title"
+                    ></h4>
+                    <p
+                      class="portfolio-description"
+                      data-string="port_05_desc"
+                    ></p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="glide__slide">
+                <div class="portfolio-card shadow-lg">
+                  <img
+                    src="assets/img/portfolio/06.jpg"
+                    alt="Trabajo en Altura y Seguridad"
+                    class="portfolio-image"
+                  />
+                  <div class="portfolio-overlay">
+                    <h4
+                      class="portfolio-title"
+                      data-string="port_06_title"
+                    ></h4>
+                    <p
+                      class="portfolio-description"
+                      data-string="port_06_desc"
+                    ></p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="glide__arrows" data-glide-el="controls">
+            <button
+              class="glide__arrow glide__arrow--left"
+              data-glide-dir="<"
+              aria-label="Anterior Proyecto"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button
+              class="glide__arrow glide__arrow--right"
+              data-glide-dir=">"
+              aria-label="Siguiente Proyecto"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-dark text-white">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2
+            class="section-title"
+            style="color: #499f92"
+            data-string="contact_title"
+          ></h2>
+          <hr class="w-25 mx-auto border-3" style="color: #499f92" />
+          <p data-string="contact_subtitle"></p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="mapouter">
+              <div class="gmap_canvas ratio ratio-16x9" style="height: 500px">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=Virginia%202044%2C%20Las%20%C3%81guilas%2C%2031214%2C%20Chihuahua&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row text-center mb-4">
+              <div class="col-md-4 mb-4">
+                <div class="contact-item">
+                  <i
+                    class="fas fa-map-marker-alt fa-2x mb-2"
+                    style="color: #499f92 !important"
+                  ></i>
+                  <p class="small">
+                    Virginia 2044, Las Águilas, 31214,<br />Chihuahua,
+                    Chihuahua, México
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="contact-item">
+                  <i
+                    class="fas fa-envelope fa-2x mb-2"
+                    style="color: #499f92 !important"
+                  ></i>
+                  <p>
+                    <a
+                      href="mailto:contacto@clso.mx"
+                      class="text-decoration-none"
+                      >contacto@clso.mx</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4">
+                <div class="contact-item">
+                  <i
+                    class="fas fa-phone fa-2x mb-2"
+                    style="color: #499f92 !important"
+                  ></i>
+                  <p>
+                    <a href="tel:+526143468579" class="text-decoration-none"
+                      >(+52) 614 346 8579</a
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h3
+              class="fw-bold mb-3"
+              style="color: #e0e0e0 !important"
+              data-string="contact_write"
+            ></h3>
+
+            <form name="sentMessage" id="contactForm" novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <input
+                      type="text"
+                      id="name"
+                      class="form-control"
+                      data-string-placeholder="contact_name"
+                      required
+                      aria-label="Nombre Completo"
+                    />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <input
+                      type="email"
+                      id="email"
+                      class="form-control"
+                      data-string-placeholder="contact_email"
+                      required
+                      aria-label="Correo electrónico"
+                    />
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <textarea
+                  name="message"
+                  id="message"
+                  class="form-control"
+                  rows="4"
+                  data-string-placeholder="contact_message"
+                  required
+                  aria-label="Mensaje"
+                ></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+              <div
+                id="success"
+                class="mb-3"
+                role="alert"
+                aria-live="polite"
+              ></div>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="background-color: #499f92; border-color: #499f92"
+                data-string="contact_send"
+              ></button>
+            </form>
+          </div>
+        </div>
+
+        <div class="social text-center mt-5">
+          <h3
+            class="h4 fw-bold"
+            style="color: #e0e0e0 !important"
+            data-string="contact_follow"
+          ></h3>
+          <ul class="list-inline mt-3">
+            <li class="list-inline-item me-3">
+              <a href="https://www.facebook.com/clsoelec/" aria-label="Facebook"
+                ><i class="fab fa-facebook fa-2x" style="color: #499f92"></i
+              ></a>
+            </li>
+            <li class="list-inline-item me-3">
+              <a href="https://twitter.com/clso_elec" aria-label="Twitter"
+                ><i class="fab fa-twitter fa-2x" style="color: #499f92"></i
+              ></a>
+            </li>
+            <li class="list-inline-item">
+              <a
+                href="https://www.linkedin.com/company/18275570/admin/"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin fa-2x" style="color: #499f92"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="py-4 bg-dark text-white text-center">
+      <div class="container">
+        <p class="mb-0">
+          Copyright © <span id="current-year"></span> CLSO Ingeniería Eléctrica.
+          <span data-string="footer_designer"></span>
+          <a href="http://www.eliptica.com.mx" rel="nofollow" class="text-white"
+            >Eliptica®</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glidejs/3.6.0/glide.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/jqBootstrapValidation.js"></script>
+    <script src="assets/js/contact_me.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      // ===========================================
+      // 1. LANGUAGE STRINGS OBJECT
+      // ===========================================
+      const spanish = {
+        // Navigation
+        nav_about: "Nosotros",
+        nav_services: "Servicios",
+        nav_portfolio: "Portafolio",
+        nav_contact: "Contacto",
+
+        // Header/Hero
+        header_title: "Construcción y Diseño Eléctrico",
+        header_subtitle: "Soluciones integrales para tus proyectos eléctricos",
+        header_cta: "Ver Más",
+
+        // About
+        about_title: "Acerca de Nosotros",
+        about_clso_title: "CLSO Ingeniería Eléctrica",
+        about_clso_text:
+          "Somos una empresa dedicada al diseño y puesta en servicio de sistemas de distribución y generación de energía eléctrica, con un equipo de ingenieros capacitados para garantizar la satisfacción en cada proyecto.",
+        about_mission_title: "Misión",
+        about_mission_text:
+          "Ofrecer servicios de diseño, dimensionamiento y puesta en marcha de sistemas eléctricos, comprometidos con la calidad y la sostenibilidad ambiental.",
+        about_vision_title: "Visión",
+        about_vision_text:
+          "Ser líderes en el sector energético a nivel nacional e internacional, reconocidos por nuestra competitividad y vanguardia tecnológica.",
+        about_values_title: "Valores",
+        value_proactivity: "Proactividad",
+        value_responsibility: "Responsabilidad",
+        value_productivity: "Productividad",
+
+        // Services
+        services_title: "Nuestros Servicios",
+        service_bt_title: "Baja Tensión",
+        service_bt_text:
+          "Diseño y construcción de instalaciones eléctricas, incluyendo sistemas de fuerza, tierras, control de motores, plantas de emergencia, y sistemas solares fotovoltaicos.",
+        service_mt_title: "Media Tensión",
+        service_mt_text:
+          "Sistemas eléctricos aéreos y subterráneos, subestaciones, planos eléctricos y trámites con CFE en plataformas como SISPROTER y SIGLA 03.",
+        service_maint_title: "Pruebas y Mantenimiento",
+        service_maint_text:
+          "Revisión, limpieza y pruebas eléctricas (TTR, HiPot, VLF, termografía infrarroja) para garantizar el correcto funcionamiento de equipos.",
+        service_training_title: "Capacitación",
+        service_training_text:
+          "Cursos de seguridad eléctrica y materias de ingeniería eléctrica, con certificación DC3 ante la STPS.",
+        service_procedures_title: "Trámites",
+        service_procedures_text:
+          "Gestión de suministro eléctrico ante CFE y asesoría en tarifas para baja y media tensión.",
+
+        // Portfolio
+        portfolio_title: "Nuestro Portafolio",
+        portfolio_details: "Ver Detalles",
+        port_01_title: "Instalación Industrial",
+        port_01_desc:
+          "Diseño y montaje completo de sistema de distribución en baja tensión para nueva nave industrial.",
+        port_02_title: "Subestación MT",
+        port_02_desc:
+          "Construcción y energización de subestación aérea de 34.5kV, incluyendo trámites CFE (SIGLA 03).",
+        port_03_title: "Proyecto Solar",
+        port_03_desc:
+          "Instalación de sistema solar fotovoltaico interconectado para ahorro energético comercial.",
+        port_04_title: "Mantenimiento Preventivo",
+        port_04_desc:
+          "Termografía infrarroja y pruebas eléctricas en tableros de control principales.",
+        port_05_title: "Diseño y Cálculo",
+        port_05_desc:
+          "Elaboración de planos y memorias de cálculo para proyecto eléctrico de centro logístico.",
+        port_06_title: "Seguridad y Normas",
+        port_06_desc:
+          "Cumplimiento total con la NOM-001-SEDE y protocolos de seguridad en media tensión.",
+
+        // Contact
+        contact_title: "Contáctanos",
+        contact_subtitle: "¿Tienes un proyecto en mente? Déjanos asesorarte.",
+        contact_write: "Escríbenos",
+        contact_name: "Nombre",
+        contact_email: "Correo electrónico",
+        contact_message: "Mensaje",
+        contact_send: "Enviar Mensaje",
+        contact_follow: "Síguenos",
+
+        // Footer
+        footer_designer: "Diseñado por",
+      };
+
+      const english = {
+        // Navigation
+        nav_about: "About Us",
+        nav_services: "Our Services",
+        nav_portfolio: "Our Work", // Using the section title for portfolio link
+        nav_contact: "Contact Us",
+
+        // Header/Hero
+        header_title: "ELECTRICAL DESIGN AND CONSTRUCTION",
+        header_subtitle: "Comprehensive solutions for your electrical projects", // Inferred from previous context
+        header_cta: "See More",
+
+        // About
+        about_title: "About Us",
+        about_clso_title: "CLSO Electrical Engineering",
+        about_clso_text:
+          "CLSO is a company dedicated to the design and commissioning of electricity distribution and generation systems, integrated by a team of engineers trained to provide an excellent service to our clients to carry out their projects.",
+        about_mission_title: "Mission:",
+        // Corrected text (The mission is usually the *what* and *how* they do it)
+        about_mission_text:
+          "Provide service, dimensioning and commissioning systems for the distribution and generation of electric power, committed to the satisfaction of our customers and the preservation of the environment.",
+        about_vision_title: "Vision:",
+        // Corrected text (The vision is usually the *future goal*)
+        about_vision_text:
+          "We want to be one of the best companies in the energy sector with national and international presence, as well as being recognized by our high level of competitiveness and technological vanguard in sustainable development for the preservation of the environment.",
+        about_values_title: "Values:",
+        value_proactivity: "Proactivity",
+        value_responsibility: "Responsibility",
+        value_productivity: "Productivity",
+
+        // Services
+        services_title: "Our Services",
+        service_bt_title: "Low Voltage:",
+        service_bt_text:
+          "Design and construction of low voltage electrical installations: • Power systems • Ground systems • Motor control systems • Emergency power plants • Electric panels • Load calculation • Single-line diagrams • Everything needed for an UVIE´s approval (Electrical Installations Verification Unit) • Procedures and advice for the realization of contracts with CFE • Photovoltaic solar systems isolated and interconnected to the network • Solar pumping",
+        service_mt_title: "Medium voltage:",
+        service_mt_text:
+          "Design and construction of medium voltage electrical installations: • Aerial and underground electrical systems • Electrical substations • Electrical plans • Load calculation • Single-line diagrams • Paperwork and advice for the realization of projects and budget requests with CFE on the platform SISPROTER and SIGLA 03",
+        service_maint_title: "Testing and Maintenance:",
+        service_maint_text:
+          "Visual and physical inspection, cleaning and re-tightening of connections, and electrical tests to analyze the correct functioning of the equipment. • TTR test • HiPot and VLF test • Dielectric oil analysis • Electric power quality • Ground resistivity and resistance • Power factor • Insulation resistance • Infrared thermography",
+        service_training_title: "Development and Training",
+        service_training_text:
+          "• Give courses in electrical safety, provide service as instructors to the Ministry of Labor and Social Prevention (STPS), to sign records of work skills DC3. •Provide academic subjects related to any area of electrical engineering.",
+        service_procedures_title: "Procedures:",
+        service_procedures_text:
+          "• Carry on any type of procedure for the supply of electricity in low or medium voltage to the electric power company (CFE), as well as provide advice on suitable rates for each service in particular.",
+
+        // Portfolio
+        portfolio_title: "Our Work",
+        portfolio_details: "View Details", // Not in HTML, retained from inferred list
+        // Portfolio items were blank in HTML, using inferred content for structure
+        port_01_title: "Industrial Installation",
+        port_01_desc:
+          "Complete design and assembly of a low voltage distribution system for a new industrial warehouse.",
+        port_02_title: "MV Substation",
+        port_02_desc:
+          "Construction and energization of a 34.5kV aerial substation, including CFE procedures (SIGLA 03).",
+        port_03_title: "Solar Project",
+        port_03_desc:
+          "Installation of an interconnected photovoltaic solar system for commercial energy savings.",
+        port_04_title: "Preventive Maintenance",
+        port_04_desc:
+          "Infrared thermography and electrical testing on main control panels.",
+        port_05_title: "Design and Calculation",
+        port_05_desc:
+          "Preparation of blueprints and calculation reports for an electrical project for a logistics center.",
+        port_06_title: "Safety and Standards",
+        port_06_desc:
+          "Full compliance with NOM-001-SEDE and medium voltage safety protocols.",
+
+        // Contact
+        contact_title: "Contact Us",
+        contact_subtitle: "You have some project in mind, let us advise you.",
+        contact_write: "Write Us",
+        contact_name: "Name",
+        contact_email: "Email",
+        contact_message: "Message",
+        contact_send: "Send Message", // Corrected from 'Enviar Mensaje'
+        contact_follow: "Follow Us",
+
+        // Footer
+        footer_designer: "Designed by",
+      };
+
+      // Function to inject the strings into the page
+      function applyStrings(lang) {
+        // Elements with innerHTML/textContent
+        document.querySelectorAll("[data-string]").forEach((el) => {
+          const key = el.getAttribute("data-string");
+          if (lang[key]) {
+            el.textContent = lang[key];
+          }
+        });
+
+        // Elements with placeholder attribute (e.g., inputs, textareas)
+        document.querySelectorAll("[data-string-placeholder]").forEach((el) => {
+          const key = el.getAttribute("data-string-placeholder");
+          if (lang[key]) {
+            el.placeholder = lang[key];
+          }
+        });
+
+        // Specific element content that requires dynamic text and static text (Footer)
+        const footerText = document.querySelector("#footer p");
+        if (footerText) {
+          const designerKey = "footer_designer";
+          if (lang[designerKey]) {
+            // Update the footer text using innerHTML (careful with XSS, but safe here)
+            footerText.innerHTML = `Copyright © <span id="current-year">${new Date().getFullYear()}</span> CLSO Ingeniería Eléctrica. ${
+              lang[designerKey]
+            } <br><a href="http://www.alejandrodelarocha.com" rel="nofollow" class="text-white">Alejandro De La Rocha</a>`;
+          }
+        }
+      }
+
+      // ===========================================
+      // 2. DOM CONTENT & INIT
+      // ===========================================
+      document.addEventListener("DOMContentLoaded", function () {
+        // *** PRIMARY CHANGE: Apply the Spanish strings on load ***
+        applyStrings(english);
+        // *******************************************************
+
+        // Initialize Glide.js slider (Portafolio)
+        const glideElement = document.querySelector(".glide");
+        if (glideElement && typeof Glide !== "undefined") {
+          new Glide(".glide", {
+            type: "carousel",
+            perView: 3,
+            gap: 20,
+            animationDuration: 800,
+            animationTimingFunc: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            hoverpause: true,
+            autoplay: 5000,
+            breakpoints: {
+              992: { perView: 2 },
+              768: { perView: 1 },
+            },
+          }).mount();
+        } else if (!glideElement) {
+          console.warn("Glide element not found.");
+        } else {
+          console.error("Glide.js library failed to load.");
+        }
+
+        const animationContainer = document.querySelector(
+          ".electrical-animation"
+        );
+        const numSparks = 15;
+        const numThunders = 5;
+
+        // 1. Generate Sparks (as energy nodes)
+        for (let i = 0; i < numSparks; i++) {
+          const spark = document.createElement("div");
+          spark.className = "electrical-spark";
+          spark.style.top = `${Math.random() * 100}%`;
+          spark.style.left = `${Math.random() * 100}%`;
+          spark.style.animationDelay = `${Math.random() * 3}s`;
+          spark.style.animationDuration = `${2 + Math.random() * 3}s`;
+          const size = 3 + Math.random() * 2;
+          spark.style.width = `${size}px`;
+          spark.style.height = `${size}px`;
+          animationContainer.appendChild(spark);
+        }
+
+        const numExtraSparks = 6;
+        for (let i = 0; i < numExtraSparks; i++) {
+          const spark = document.createElement("div");
+          spark.className = "electrical-spark";
+
+          // Random placement across the entire screen
+          spark.style.top = `${Math.random() * 100}vh`;
+          spark.style.left = `${Math.random() * 100}vw`;
+
+          // Vary the speed and start time
+          spark.style.animationDelay = `${Math.random() * 5}s`;
+          spark.style.animationDuration = `${3 + Math.random() * 3}s`; // Between 3s and 6s
+
+          animationContainer.appendChild(spark);
+        }
+      });
+
+      // Logo Scroll Logic
+      window.addEventListener("scroll", function () {
+        const logo = document.getElementById("logo-img");
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 50) {
+          logo.classList.add("scrolled");
+        } else {
+          logo.classList.remove("scrolled");
+        }
+      });
+
+      // Simple smooth scrolling for page-scroll links
+      document.querySelectorAll(".page-scroll").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            offset: {
+              top: 50,
+            },
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
