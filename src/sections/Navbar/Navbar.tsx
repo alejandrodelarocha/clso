@@ -45,6 +45,7 @@ const Navbar: React.FC = () => {
                 key={item.href}
                 href={item.href}
                 className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium"
+                style={{color: "white", fontSize: "16px", fontWeight: "bold", margin: "10px"}}
               >
                 {t(item.key)}
               </a>
@@ -55,6 +56,7 @@ const Navbar: React.FC = () => {
                 onClick={() => handleLanguageChange('es')}
                 className={`h-5 w-5 cursor-pointer hover:opacity-80 ${language === 'es' ? 'ring-2 ring-white rounded-full' : ''}`}
                 aria-label="Cambiar a español"
+                style={{color: "white", fontSize: "16px", fontWeight: "bold", margin: "10px", borderRadius: "50%", boxShadow: "0 0 15px #fff, 0 0 35px #00eaff, 0 0 50px #00aaff"}}
               >
                 <img
                   src="/assets/img/mx.svg"
@@ -66,6 +68,7 @@ const Navbar: React.FC = () => {
                 onClick={() => handleLanguageChange('en')}
                 className={`h-5 w-5 cursor-pointer hover:opacity-80 ${language === 'en' ? 'ring-2 ring-white rounded-full' : ''}`}
                 aria-label="Switch to English"
+                style={{color: "white", fontSize: "16px", fontWeight: "bold", margin: "10px", borderRadius: "50%", boxShadow: "0 0 15px #fff, 0 0 35px #00eaff, 0 0 50px #00aaff"}}
               >
                 <img
                   src="/assets/img/us.svg"
