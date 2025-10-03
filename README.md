@@ -1,4 +1,6 @@
-# CLSO Ingeniería Eléctrica - React Application
+# CLSO Ingeniería Eléctrica - React Application B
+
+By [http://AlejandroDeLaRocha.com](http://AlejandroDeLaRocha.com)
 
 This is a modern React implementation of the CLSO Ingeniería Eléctrica website, featuring responsive design, smooth animations, and internationalization support.
 
@@ -126,8 +128,9 @@ This will create a `build` directory with the production-ready files that can be
 
 ## License
 
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For any questions or inquiries, please contact [your-email@example.com](mailto:your-email@example.com)
+For any questions or inquiries, please contact alejandrodelarocha@gmail.com(mailto:alejandrodelarocha@gmail.com)
