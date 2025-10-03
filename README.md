@@ -8,7 +8,13 @@ This is a modern React implementation of the CLSO Ingeniería Eléctrica website
 
 ![ezgif-100f2aa80f579b (1)-min](https://github.com/user-attachments/assets/f516a9e3-acee-4379-91a3-1f16f6f1595a)
 
+
+
 ## Features
+
+https://github.com/user-attachments/assets/cf186690-d751-45fb-825b-4333ee00ebd3
+
+
 
 - **Responsive Design**: Fully responsive layout that works on all devices
 - **Internationalization**: Built-in support for multiple languages (Spanish/English)
